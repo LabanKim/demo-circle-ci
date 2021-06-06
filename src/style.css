@@ -5,3 +5,7 @@ html, body {
 #css-checker::after {
   content: 'True!';
 }
+
+.header {
+  color: rgb(23, 23, 59);
+}
