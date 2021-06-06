@@ -6,6 +6,10 @@ html, body {
   content: 'True!';
 }
 
+.main-body {
+  background: rgb(78, 0, 0);
+}
+
 .header {
   color: rgb(23, 23, 59);
 }
