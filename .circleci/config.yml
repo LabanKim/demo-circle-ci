@@ -1,6 +1,6 @@
 version: 2.1
 orbs:
-  aws-s3: circleci/aws-s3@1.0.4
+  aws-s3: circleci/aws-s3@2.0.0
 jobs:
   build:
     docker:
@@ -12,14 +12,13 @@ jobs:
       - run: npm install
       - run: npm run build
       - aws-s3/sync:
+          aws-access-key-id: AWS_KEY
+          aws-secret-access-key: AWS_SECRET
           from: dist
           to: 's3://dev-ci-cd-laban/'
           arguments: |
             --acl public-read \
             --cache-control "max-age=86400" \
-          overwrite: true
-          aws-access-key-id: AWS_KEY
-          aws-secret-access-key: AWS_SECRET
 workflows:
   version: 2.1
   build:
